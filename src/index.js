@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import { root } from 'src/router';
+import { Router, Route, Switch, Redirect } from 'react-router-dom';
+import { root, history } from 'src/router';
 import Root from 'src/root';
 import Test from 'src/test';
 import Users from 'src/users';
@@ -10,7 +10,7 @@ import Header from 'src/Header';
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <Router history={history}>
       <Header/>
       <Switch>
         {/* exact routes */}
@@ -24,7 +24,7 @@ const App = () => {
         { /* fallback for unknown route - redirect to index */ }
         <Route><Redirect to={root.index}/></Route>
       </Switch>
-    </BrowserRouter>
+    </Router>
   );
 };
 

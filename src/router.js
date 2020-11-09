@@ -1,4 +1,5 @@
 import { generatePath } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
 
 const page = (path) => {
   return {
@@ -40,3 +41,7 @@ export const root = {
     },
   },
 };
+
+const browserHistory = createBrowserHistory();
+
+export const history = browserHistory;
